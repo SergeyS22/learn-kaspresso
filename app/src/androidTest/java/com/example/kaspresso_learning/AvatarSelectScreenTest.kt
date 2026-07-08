@@ -4,6 +4,7 @@ import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithTag
+import androidx.compose.ui.test.performClick
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
 import org.junit.Test
@@ -33,6 +34,23 @@ class AvatarSelectScreenTest : TestCase() {
             composeTestRule
                 .onNodeWithTag(Tags.AVATAR_NEXT_BUTTON)
                 .assertIsDisplayed()
+        }
+    }
+
+    @Test
+    fun checkThatAvatarChosen() = run {
+        step("Нажать на кнопку Далее") {
+            composeTestRule
+                .onNodeWithTag(Tags.AVATAR_NEXT_BUTTON)
+                .performClick()
+
+        }
+        step("Проверить, что отображается текст-предупреждение отом, что аватар выбран") {
+            composeTestRule
+
+                .onNodeWithTag(Tags.AVATAR_ERROR)
+                .assertIsDisplayed()
+
         }
     }
 }
