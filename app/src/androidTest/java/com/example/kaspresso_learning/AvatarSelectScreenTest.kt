@@ -42,12 +42,12 @@ class AvatarSelectScreenTest : TestCase() {
         step("Нажать на кнопку Далее") {
             composeTestRule
                 .onNodeWithTag(Tags.AVATAR_NEXT_BUTTON)
+                .assertIsDisplayed()
                 .performClick()
 
         }
         step("Проверить, что отображается текст-предупреждение отом, что аватар выбран") {
             composeTestRule
-
                 .onNodeWithTag(Tags.AVATAR_ERROR)
                 .assertIsDisplayed()
 

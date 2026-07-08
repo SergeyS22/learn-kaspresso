@@ -1,5 +1,6 @@
 package com.example.kaspresso_learning
 
+import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertTextEquals
 import androidx.compose.ui.test.isDisplayed
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
@@ -23,26 +24,31 @@ class LoginFlowTest: TestCase() {
         step("Выбрать аватар") {
             composeTestRule
                 .onNodeWithTag("${Tags.AVATAR_ICON}_${utils.getRandom()}")
+                .assertIsDisplayed()
                 .performClick()
         }
         step("Нажать кнопку «Далее»") {
             composeTestRule
                 .onNodeWithTag(Tags.AVATAR_NEXT_BUTTON)
+                .assertIsDisplayed()
                 .performClick()
         }
         step("Ввести имя «Тестер» в поле ввода") {
             composeTestRule
                 .onNodeWithTag(Tags.NAME_INPUT_TEXT)
+                .assertIsDisplayed()
                 .performTextInput(LOGIN)
         }
         step("Нажать кнопку «Войти» по новому тегу") {
             composeTestRule
                 .onNodeWithTag(Tags.NAME_INPUT_LOGIN_BUTTON)
+                .assertIsDisplayed()
                 .performClick()
         }
         step("Проверки открытия ленты") {
             composeTestRule
                 .onNodeWithTag(Tags.FEED_TITLE )
+                .assertIsDisplayed()
                 .assertTextEquals("Привет, ${LOGIN}!")
 
             composeTestRule
