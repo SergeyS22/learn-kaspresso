@@ -1,14 +1,10 @@
 package com.example.kaspresso_learning.tests
 
-import androidx.compose.ui.test.assertIsDisplayed
-import androidx.compose.ui.test.assertTextContains
-import androidx.compose.ui.test.onNodeWithTag
-import androidx.compose.ui.test.performClick
-import androidx.compose.ui.test.performTextInput
-import com.example.kaspresso_learning.Tags
 import com.example.kaspresso_learning.BaseTestCase
 import com.example.kaspresso_learning.resources.TestResources.LOGIN
 import com.example.kaspresso_learning.steps.AvatarSelectSteps
+import com.example.kaspresso_learning.steps.FeedSteps
+import com.example.kaspresso_learning.steps.NameInputSteps
 import com.example.kaspresso_learning.utils.Util
 import org.junit.Test
 
@@ -25,30 +21,22 @@ class LoginFlowTest : BaseTestCase() {
         }
 
         step("Ввести имя «Тестер» в поле ввода") {
-            composeTestRule
-                .onNodeWithTag(Tags.NAME_INPUT_TEXT)
-                .assertIsDisplayed()
-                .performTextInput(LOGIN)
+            NameInputSteps.typeNameInput(LOGIN)
         }
 
         step("Нажать на кнопку «Войти»") {
-            composeTestRule
-                .onNodeWithTag(Tags.NAME_INPUT_LOGIN_BUTTON)
-                .assertIsDisplayed()
-                .performClick()
+            NameInputSteps.clickEnterButton()
         }
 
         step("Проверить отображение заголовка-приветствие на экране ленты") {
-            composeTestRule
-                .onNodeWithTag(Tags.FEED_TITLE)
-                .assertIsDisplayed()
-                .assertTextContains("Тестер", substring = true)
+            FeedSteps.assertTitleDisplayed(LOGIN)
         }
 
         step("Проверить отображение поста") {
-            composeTestRule
-                .onNodeWithTag("${Tags.FEED_POST}_0")
-                .assertIsDisplayed()
+//            composeTestRule
+//                .onNodeWithTag("${Tags.FEED_POST}_0")
+//                .assertIsDisplayed()
+            FeedSteps.assertPost(0)
         }
     }
 }

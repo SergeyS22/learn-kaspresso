@@ -4,6 +4,22 @@ import com.example.kaspresso_learning.screens.FeedScreen
 
 object FeedSteps {
 
+    fun assertTitleDisplayed(text: String) {
+        FeedScreen {
+            feedTitle {
+                assertTextEquals("Привет, ${text}!")
+            }
+        }
+    }
+
+    fun assertPost(index: Int) {
+        FeedScreen{
+            feedPost(index) {
+                assertIsDisplayed()
+            }
+        }
+    }
+
     fun clickFeedScreenFabButton() {
         FeedScreen {
             feedScreenFabButton {
