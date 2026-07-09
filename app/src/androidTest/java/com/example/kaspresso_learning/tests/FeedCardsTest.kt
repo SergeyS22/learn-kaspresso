@@ -18,8 +18,8 @@ class FeedCardsTest : BaseTestCase() {
             FeedSteps.assertDataOnCard("Алексей",
                 "Сенча",
                 "Зелёный",
-                "5г",
-                "150мл",
+                "5 г",
+                "150 мл",
                 "Гайвань")
         }
     }
@@ -33,8 +33,8 @@ class FeedCardsTest : BaseTestCase() {
             FeedSteps.assertDataOnCard("Мария",
                 "Ассам",
                 "Красный",
-                "7г",
-                "200мл",
+                "7 г",
+                "200 мл",
                 "Чайник")
         }
     }
@@ -49,8 +49,8 @@ class FeedCardsTest : BaseTestCase() {
                 "Дмитрий",
                 "Да Хун Пао",
                 "Улун",
-                "8г",
-                "250мл",
+                "8 г",
+                "250 мл",
                 "Гайвань")
         }
     }
