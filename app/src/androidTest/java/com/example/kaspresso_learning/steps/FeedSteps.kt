@@ -4,66 +4,38 @@ import com.example.kaspresso_learning.screens.FeedScreen
 
 object FeedSteps {
 
-    fun assertTitleDisplayed(text: String) {
-        FeedScreen {
-            feedTitle {
-                assertTextEquals("Привет, ${text}!")
-            }
+
+fun assertDataOnCard(authorName: String,
+                     expectedTeaName: String,
+                     expectedTeaType: String,
+                     expectedWeight: String,
+                     expectedVolume:String,
+                     expectedVessel: String) {
+    FeedScreen {
+        with(teaNameOnCard(authorName)) {
+            assertIsDisplayed()
+            assertTextEquals(expectedTeaName)
         }
-    }
-
-    fun assertPost(index: Int) {
-        FeedScreen{
-            feedPost(index) {
-                assertIsDisplayed()
-            }
+        with(teaTypeOnCard(authorName)) {
+            assertIsDisplayed()
+            assertTextEquals(expectedTeaType)
         }
-    }
-
-    fun clickFeedScreenFabButton() {
-        FeedScreen {
-            feedScreenFabButton {
-                assertIsDisplayed()
-                performClick()
-            }
+        with(weightOnCard(authorName)) {
+            assertIsDisplayed()
+            assertTextEquals(expectedWeight)
         }
-    }
-
-    fun clickFeedButton() {
-        FeedScreen {
-            feedButton {
-                assertIsDisplayed()
-                performClick()
-            }
+        with(volumeOnCard(authorName)) {
+            assertIsDisplayed()
+            assertTextEquals(expectedVolume)
         }
-    }
-
-    fun clickProfileButton() {
-        FeedScreen {
-            feedProfileButton {
-                assertIsDisplayed()
-                performClick()
-            }
-        }
-    }
-
-    fun asserCardParamsDisplayed(index: Int) {
-        FeedScreen {
-            feedPost(index) {
-                feedPostAuthorName {
-                    assertIsDisplayed()
-                }
-                feedPostDate{
-                    assertIsDisplayed()
-                }
-                feedPostTeaName{
-                    assertIsDisplayed()
-                }
-
-            }
+        with(vesselOnCard(authorName)) {
+            assertIsDisplayed()
+            assertTextEquals(expectedVessel)
         }
 
+
     }
+}
 
     fun upScroll() {
         FeedScreen {
