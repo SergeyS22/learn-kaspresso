@@ -4,6 +4,14 @@ import com.example.kaspresso_learning.screens.FeedScreen
 
 object FeedSteps {
 
+    fun clickFeedScreenFabButton() {
+        FeedScreen {
+            feedScreenFabButton {
+                assertIsDisplayed()
+                performClick()
+            }
+        }
+    }
 
 fun assertDataOnCard(authorName: String,
                      expectedTeaName: String,
