@@ -2,6 +2,7 @@ package com.example.kaspresso_learning.steps
 
 import androidx.compose.ui.test.ExperimentalTestApi
 import com.example.kaspresso_learning.screens.NewOrderScreen
+import androidx.compose.ui.test.hasText as matchText
 
 object NewOrderSteps {
 
@@ -16,27 +17,18 @@ object NewOrderSteps {
 
     @OptIn(ExperimentalTestApi::class)
     fun scrollToItemByIndex(index: Int) {
-        NewOrderScreen {
-            with(teaIndexList(index)) {
-                performScrollToIndex(index)
-            }
-        }
+        NewOrderScreen.teaIndexList.performScrollToIndex(index)
     }
 
     @OptIn(ExperimentalTestApi::class)
     fun scrollToItemByNode(teaItem: String) {
-        NewOrderScreen {
-            with(teaNameItem(teaItem)) {
-                assertIsDisplayed()
-            }
-        }
+        NewOrderScreen.teaIndexList.performScrollToNode(matchText(teaItem))
+
     }
 
-
-    @OptIn(ExperimentalTestApi::class)
     fun checkTeaItemDisplayed(teaItem: Int, teaItemName: String) {
-        NewOrderScreen{
-            with(teaItemContainer(teaItem)) {
+        NewOrderScreen {
+            with(teaItem(teaItem)) {
                 assertIsDisplayed()
                 assertTextEquals(teaItemName)
             }
@@ -45,12 +37,18 @@ object NewOrderSteps {
 
     fun choseTeaType(teaType: String) {
         NewOrderScreen {
-            with(teaItemContainer(teaType)) {
+            with(teaItem(teaType)) {
                 assertIsDisplayed()
                 performClick()
             }
         }
     }
 
-
+    fun assertTeaTypeDisplayed(teaType: String) {
+        NewOrderScreen {
+            with(teaItem(teaType)) {
+                assertIsDisplayed()
+            }
+        }
+    }
 }
