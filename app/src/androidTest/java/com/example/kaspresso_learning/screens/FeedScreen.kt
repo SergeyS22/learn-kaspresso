@@ -6,13 +6,13 @@ import io.github.kakaocup.compose.node.element.KNode
 import androidx.compose.ui.test.hasTestTag as matchTag
 import androidx.compose.ui.test.hasText as matchText
 
-object FeedScreen : ComposeScreen<FeedScreen>(){
+object FeedScreen : ComposeScreen<FeedScreen>() {
 
-    val feedScreenFabButton : KNode = child {
+    val feedScreenFabButton: KNode = child {
         hasTestTag(Tags.FEED_FAB)
     }
 
-    fun teaNameOnCard(authorName: String): KNode =child {
+    fun teaNameOnCard(authorName: String): KNode = child {
         hasTestTag(Tags.FEED_POST_TEA_NAME)
         hasAnySibling(matchTag(Tags.FEED_POST_AUTHOR_NAME) and matchText(authorName))
     }
