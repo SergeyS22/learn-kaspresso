@@ -1,5 +1,6 @@
 package com.example.kaspresso_learning.steps
 
+import androidx.compose.ui.test.ExperimentalTestApi
 import com.example.kaspresso_learning.screens.NewOrderScreen
 
 object NewOrderSteps {
@@ -13,63 +14,43 @@ object NewOrderSteps {
         }
     }
 
-//    fun scrollToItemByIndex(index: Int) {
-//        NewOrderScreen {
-//            teaIndexList(index) {
-//                performScrollToIndex(index)
-//            }
-//
-//        }
-//    }
-
-//    fun scrollToItemByIndex(index: Int) {
-//        NewOrderScreen {
-//            teaItemContainer {
-//                performScrollToIndex(index)
-//            }
-//        }
-//    }
-
+    @OptIn(ExperimentalTestApi::class)
     fun scrollToItemByIndex(index: Int) {
         NewOrderScreen {
-            teaItemContainer {
-//                performScrollToIndex(index) //?
+            with(teaIndexList(index)) {
+                performScrollToIndex(index)
             }
         }
     }
 
-    fun checkTeaTypeDisplayed(teaType: String) {
-        NewOrderScreen {
-            with(teaNameType(teaType)) {
-                assertIsDisplayed()
-            }
-        }
-    }
-
-    fun checkTeaItemDisplayed(teaItem: String) {
+    @OptIn(ExperimentalTestApi::class)
+    fun scrollToItemByNode(teaItem: String) {
         NewOrderScreen {
             with(teaNameItem(teaItem)) {
                 assertIsDisplayed()
+            }
+        }
+    }
+
+
+    @OptIn(ExperimentalTestApi::class)
+    fun checkTeaItemDisplayed(teaItem: Int, teaItemName: String) {
+        NewOrderScreen{
+            with(teaItemContainer(teaItem)) {
+                assertIsDisplayed()
+                assertTextEquals(teaItemName)
             }
         }
     }
 
     fun choseTeaType(teaType: String) {
         NewOrderScreen {
-            with(teaNameType(teaType)) {
+            with(teaItemContainer(teaType)) {
                 assertIsDisplayed()
                 performClick()
             }
         }
     }
 
-    fun choseItemType(teaItem: String) {
-        NewOrderScreen {
-            with(teaNameItem(teaItem)) {
-                assertIsDisplayed()
-                performClick()
-            }
-        }
-    }
 
 }
