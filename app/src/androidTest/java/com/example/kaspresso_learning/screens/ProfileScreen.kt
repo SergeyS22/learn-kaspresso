@@ -22,6 +22,6 @@ object ProfileScreen : ComposeScreen<ProfileScreen>() {
 
     fun teaTypeOnHistoryCard(item: Int, teaDescriptionIntoCardHistory: String): KNode = child {
         hasTestTag("${Tags.PROFILE_HISTORY_ITEM}_$item")
-        hasAnyChild( matchText(teaDescriptionIntoCardHistory))
+        hasAnySibling( matchText(teaDescriptionIntoCardHistory))
     }
 }

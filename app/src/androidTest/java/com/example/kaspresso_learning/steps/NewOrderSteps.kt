@@ -82,7 +82,7 @@ object NewOrderSteps {
 
     @OptIn(ExperimentalTestApi::class)
     fun chooseInfusionNumber(number: Int) {
-        NewOrderScreen.numberOfInfusions.performScrollToIndex(number)
+//        NewOrderScreen.numberOfInfusions.performScrollToIndex(number)
         NewOrderScreen {
             with(infusionsItem(number)) {
                 assertIsDisplayed()
