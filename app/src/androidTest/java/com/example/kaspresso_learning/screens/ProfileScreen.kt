@@ -3,7 +3,7 @@ package com.example.kaspresso_learning.screens
 import com.example.kaspresso_learning.Tags
 import io.github.kakaocup.compose.node.element.ComposeScreen
 import io.github.kakaocup.compose.node.element.KNode
-import androidx.compose.ui.test.hasText as matchText
+import androidx.compose.ui.test.hasTestTag as matchTag
 
 
 object ProfileScreen : ComposeScreen<ProfileScreen>() {
@@ -21,7 +21,7 @@ object ProfileScreen : ComposeScreen<ProfileScreen>() {
     }
 
     fun teaTypeOnHistoryCard(item: Int, teaDescriptionIntoCardHistory: String): KNode = child {
-        hasTestTag("${Tags.PROFILE_HISTORY_ITEM}_$item")
-        hasAnySibling( matchText(teaDescriptionIntoCardHistory))
+        hasText(teaDescriptionIntoCardHistory)
+        hasAnyAncestor (matchTag("${Tags.PROFILE_HISTORY_ITEM}_$item"))
     }
 }

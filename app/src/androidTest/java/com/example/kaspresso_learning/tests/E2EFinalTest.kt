@@ -69,12 +69,9 @@ class E2EFinalTest : BaseTestCase() {
         }
 
         step("Проверить запись в профиле") {
-            ProfileSteps.assertTeaDataOnHistoryCard(0, "Ми Лань Сян (Медовая Орхидея)")
-//            ProfileSteps.assertTeaDataOnHistoryCard(0, "Улун · 6 г · 100 мл · Гайвань · 5 прол.")
+            ProfileSteps.assertTeaNameOnHistoryCard(0, "Ми Лань Сян (Медовая Орхидея)")
+            ProfileSteps.assertTeaDetailsOnHistoryCard(0, "Улун · 6 г · 100 мл · Гайвань · 5 прол.")
         }
-
-
-
 
     }
 }

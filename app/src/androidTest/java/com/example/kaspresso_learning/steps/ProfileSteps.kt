@@ -4,9 +4,15 @@ import com.example.kaspresso_learning.screens.ProfileScreen
 
 object ProfileSteps {
 
-    fun assertTeaDataOnHistoryCard(carItem: Int, teaDescriptionIntoCardHistory: String) {
+    fun assertTeaNameOnHistoryCard(carItem: Int, teaDescriptionIntoCardHistory: String) {
         ProfileScreen
             .teaTypeOnHistoryCard(carItem, teaDescriptionIntoCardHistory)
-            .assertTextContains(teaDescriptionIntoCardHistory)
+            .assertTextEquals(teaDescriptionIntoCardHistory)
+    }
+
+    fun assertTeaDetailsOnHistoryCard(carItem: Int, details: String) {
+        ProfileScreen
+            .teaTypeOnHistoryCard(carItem, details)
+            .assertTextEquals(details)
     }
 }
