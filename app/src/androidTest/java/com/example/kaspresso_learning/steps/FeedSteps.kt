@@ -13,6 +13,15 @@ object FeedSteps {
         }
     }
 
+    fun clickProfileButton() {
+        FeedScreen {
+            profileButton {
+                assertIsDisplayed()
+                performClick()
+            }
+        }
+    }
+
 fun assertDataOnCard(authorName: String,
                      expectedTeaName: String,
                      expectedTeaType: String,

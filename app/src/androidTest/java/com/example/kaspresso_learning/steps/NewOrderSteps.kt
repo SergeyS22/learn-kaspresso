@@ -44,6 +44,62 @@ object NewOrderSteps {
         }
     }
 
+    fun inputWeight(weight: String) {
+        NewOrderScreen {
+            gramsInput {
+                assertIsDisplayed()
+                performTextInput(weight)
+            }
+        }
+    }
+
+    fun chooseGaiwan() {
+        NewOrderScreen {
+            gaiwanVessel {
+                assertIsDisplayed()
+                performClick()
+            }
+        }
+    }
+
+    fun inputVolume(volume: String) {
+        NewOrderScreen {
+            volumeInput {
+                assertIsDisplayed()
+                performTextInput(volume)
+            }
+        }
+    }
+
+    fun clickNumbersOfInfusionsList() {
+        NewOrderScreen {
+            numberOfInfusions {
+                assertIsDisplayed()
+                performClick()
+            }
+        }
+    }
+
+    @OptIn(ExperimentalTestApi::class)
+    fun chooseInfusionNumber(number: Int) {
+        NewOrderScreen.numberOfInfusions.performScrollToIndex(number)
+        NewOrderScreen {
+            with(infusionsItem(number)) {
+                assertIsDisplayed()
+                performClick()
+            }
+        }
+    }
+
+    fun clickSaveButton() {
+        NewOrderScreen {
+            saveButton{
+                assertIsDisplayed()
+                performClick()
+            }
+        }
+    }
+
     fun assertTeaTypeDisplayed(teaType: String) {
         NewOrderScreen {
             with(teaItem(teaType)) {
@@ -52,3 +108,7 @@ object NewOrderSteps {
         }
     }
 }
+
+
+
+

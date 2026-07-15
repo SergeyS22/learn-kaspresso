@@ -45,6 +45,7 @@ object Tags {
     const val BREWING_SAVE = "new_brewing_save"
     const val BREWING_INFUSIONS = "new_brewing_infusions"
     const val BREWING_INFUSIONS_ITEM = "new_brewing_infusions_item" // + "_$n"
+    const val BREWING_PROFILE = "brewing_profile"
 
     // Tea Select Screen
     const val TEA_SELECT_CONTAINER = "tea_select_container"

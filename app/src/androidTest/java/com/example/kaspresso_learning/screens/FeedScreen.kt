@@ -12,6 +12,10 @@ object FeedScreen : ComposeScreen<FeedScreen>() {
         hasTestTag(Tags.FEED_FAB)
     }
 
+    val profileButton: KNode = child {
+        hasTestTag(Tags.BREWING_PROFILE)
+    }
+
     fun teaNameOnCard(authorName: String): KNode = child {
         hasTestTag(Tags.FEED_POST_TEA_NAME)
         hasAnySibling(matchTag(Tags.FEED_POST_AUTHOR_NAME) and matchText(authorName))
