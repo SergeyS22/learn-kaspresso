@@ -8,6 +8,9 @@ import androidx.compose.ui.test.hasText as matchText
 
 object FeedScreen : ComposeScreen<FeedScreen>() {
 
+    val greetingTitle: KNode = child {
+        hasTestTag(Tags.FEED_TITLE)
+    }
     val feedScreenFabButton: KNode = child {
         hasTestTag(Tags.FEED_FAB)
     }

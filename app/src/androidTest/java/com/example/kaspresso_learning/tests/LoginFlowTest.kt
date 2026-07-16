@@ -3,6 +3,7 @@ package com.example.kaspresso_learning.tests
 import com.example.kaspresso_learning.BaseTestCase
 import com.example.kaspresso_learning.resources.TestResources.LOGIN
 import com.example.kaspresso_learning.steps.AvatarSelectSteps
+import com.example.kaspresso_learning.steps.FeedSteps
 import com.example.kaspresso_learning.steps.NameInputSteps
 import com.example.kaspresso_learning.utils.Util
 import org.junit.Test
@@ -28,11 +29,18 @@ class LoginFlowTest : BaseTestCase() {
         }
 
         step("Проверить отображение заголовка-приветствие на экране ленты") {
-
+            FeedSteps.assertGreetingTitleIsDisplayed(LOGIN)
         }
 
         step("Проверить отображение поста") {
-
+            FeedSteps.assertDataOnCard(
+                "Алексей",
+                "Сенча",
+                "Зелёный",
+                "5 г",
+                "150 мл",
+                "Гайвань"
+            )
         }
     }
 }
