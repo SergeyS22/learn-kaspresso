@@ -1,7 +1,6 @@
 package com.example.kaspresso_learning.features.catalog
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -109,7 +108,7 @@ private fun TeaTypeList(
                     text = type.displayName,
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Medium,
-                    modifier = Modifier.weight(1f)
+                    modifier = Modifier.weight(1f),
                 )
                 Icon(
                     Icons.AutoMirrored.Filled.KeyboardArrowRight,
