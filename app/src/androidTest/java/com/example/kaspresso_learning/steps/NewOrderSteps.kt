@@ -93,7 +93,7 @@ object NewOrderSteps {
 
     fun clickSaveButton() {
         NewOrderScreen {
-            saveButton{
+            saveButton {
                 assertIsDisplayed()
                 performClick()
             }

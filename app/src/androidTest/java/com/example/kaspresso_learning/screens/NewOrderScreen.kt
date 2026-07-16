@@ -22,11 +22,11 @@ object NewOrderScreen : ComposeScreen<NewOrderScreen>() {
         hasTestTag("${Tags.TEA_ITEM}_$index")
     }
 
-    val gramsInput : KNode = child {
+    val gramsInput: KNode = child {
         hasTestTag(Tags.BREWING_WEIGHT)
     }
 
-    val gaiwanVessel : KNode = child {
+    val gaiwanVessel: KNode = child {
         hasTestTag(Tags.BREWING_VESSEL_GAIWAN)
     }
 
@@ -45,9 +45,6 @@ object NewOrderScreen : ComposeScreen<NewOrderScreen>() {
     val saveButton: KNode = child {
         hasTestTag(Tags.BREWING_SAVE)
     }
-
-
-
 
 
 }

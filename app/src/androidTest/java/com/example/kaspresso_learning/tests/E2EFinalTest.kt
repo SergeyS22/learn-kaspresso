@@ -56,12 +56,14 @@ class E2EFinalTest : BaseTestCase() {
         }
 
         step("Проверить новую карточку в ленте") {
-            FeedSteps.assertDataOnCard(TestResources.LOGIN,
+            FeedSteps.assertDataOnCard(
+                TestResources.LOGIN,
                 "Ми Лань Сян (Медовая Орхидея)",
                 "Улун",
                 "6 г",
                 "100 мл",
-                "Гайвань")
+                "Гайвань"
+            )
         }
 
         step("Перейти в Профиль (через нижнюю навигацию)") {

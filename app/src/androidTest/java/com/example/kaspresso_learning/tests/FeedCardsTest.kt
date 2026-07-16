@@ -15,12 +15,14 @@ class FeedCardsTest : BaseTestCase() {
         }
 
         step("Проверяем данные на карточке 1") {
-            FeedSteps.assertDataOnCard("Алексей",
+            FeedSteps.assertDataOnCard(
+                "Алексей",
                 "Сенча",
                 "Зелёный",
                 "5 г",
                 "150 мл",
-                "Гайвань")
+                "Гайвань"
+            )
         }
     }
 
@@ -30,12 +32,14 @@ class FeedCardsTest : BaseTestCase() {
             LoginSharedSteps.login(2, "Мария")
         }
         step("Проверяем данные на карточке 2") {
-            FeedSteps.assertDataOnCard("Мария",
+            FeedSteps.assertDataOnCard(
+                "Мария",
                 "Ассам",
                 "Красный",
                 "7 г",
                 "200 мл",
-                "Чайник")
+                "Чайник"
+            )
         }
     }
 
@@ -51,7 +55,8 @@ class FeedCardsTest : BaseTestCase() {
                 "Улун",
                 "8 г",
                 "250 мл",
-                "Гайвань")
+                "Гайвань"
+            )
         }
     }
 
